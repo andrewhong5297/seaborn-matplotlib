@@ -21,13 +21,13 @@ from scipy import stats
 sns.set_style("ticks") #darkgrid, whitegrid, dark, white, ticks. RC is for more customization of the graphic
 
 # reading the data
-data = pd.read_excel(r'F:\Treasury Risk Rotation Docs\Market Pricing\LR Nov 15 (2018-2019 data) (cleaned).xlsx')
+data = pd.read_csv(r'C:\Users\Andrew\Documents\Python Scripts\data set\home data\housing.csv')
 
 """histogram, KDE, or Rug: histogram are the bars, KDE is the distribution line (True to show, false to hide). Rug is the frequency in each bar."""
-#sns.distplot(data["Cushion"], hist=True, kde= False, rug=True, fit= stats.gamma);
+#sns.distplot(data["median_house_value"], hist=True, kde= True, rug= False);
 """line plot: same as bar plot but line instead (not in 0.8, only in 0.9)"""
-#plt.figure(figsize=(10,6))
-#sns.lineplot(x="Date", y="Pro-Forma Amount ($mm)", data=data)
+plt.figure(figsize=(10,6))
+sns.lineplot(x="median_income", y="median_house_value", data=data)
 """joint plot: just a histogram on top of a scatter, though this can be played with"""
 #df = pd.DataFrame(data, columns=["Cushion", "Amount($mm)"])
 #with sns.axes_style("ticks"):
